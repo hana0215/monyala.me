@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FloatingHeart } from "./FloatingHeart";
 
 export default function Home() {
@@ -7,27 +8,30 @@ export default function Home() {
         <FloatingHeart />
       </div>
       <div className="absolute inset-0 flex flex-col">
-        <main className="max-w-[512px] mx-auto">
-          <header className="p-4 font-bold text-2xl">monyala.me</header>
-          <div className="flex flex-col items-center justify-center">
-            <div className="flex items-center justify-center space-x-8 mt-12">
-              <div>
-                <img
-                  src="/monyala.jpeg"
-                  width={400}
-                  height={400}
-                  alt="My avatar"
-                  className="w-32 h-32 rounded-full"
-                />
-              </div>
-              <div className="space-y-2">
-                <div className="font-bold text-xl">monyala</div>
-                <div className="font-bold text-xl">Illustrator</div>
+        <header className="p-4 font-bold text-xl">
+          <Link href="/">monyala.me</Link>
+        </header>
+        <main className="mx-auto flex w-full max-w-screen-xs flex-1 flex-col justify-center p-8">
+          <div className="flex flex-col items-center justify-end">
+            <div className="animate-fade-in-and-drop text-center flex justify-center items-center space-x-6">
+              <img
+                src="/monyala.jpeg"
+                width={128}
+                height={128}
+                alt="Illustration of my avatar"
+                decoding="async"
+                className="mx-auto rounded-full hover:animate-shake xs:mx-0 w-32 h-32"
+              />
+              <div className="flex flex-col items-start justify-end mt-12">
+                <h1 className="w-full text-2xl font-bold text-left">monyala</h1>
+                <p className="mt-1 font-bold text-left">Illustrator</p>
               </div>
             </div>
-            <div className="p-4 flex justify-center space-x-32 mt-8">
+          </div>
+          <div>
+            <div className="mt-20 space-y-12 xs:flex xs:justify-between xs:space-y-0">
               <div>
-                <span className="font-bold text-xl">Loves</span>
+                <span className="text-xl font-bold">Loves</span>
                 <ul className="list-disc list-inside space-y-1 text-lg mt-4">
                   <li>
                     <span className="text-text/80">🎀</span> Pripara
@@ -58,6 +62,9 @@ export default function Home() {
             </div>
           </div>
         </main>
+        <footer className="p-4 text-center text-sm">
+          <small>© 2023 monyala</small>
+        </footer>
       </div>
     </div>
   );

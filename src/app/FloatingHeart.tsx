@@ -101,9 +101,6 @@ export const FloatingHeart: React.FC = () => {
       return;
     }
 
-    const heartImage = new Image();
-    heartImage.src = "/heart.svg";
-
     const heartNum = Math.floor(width / 40);
     const hearts = [...range(0, heartNum)].map(() =>
       createHeart({ width, height })
